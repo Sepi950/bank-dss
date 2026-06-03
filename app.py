@@ -808,7 +808,7 @@ if page == "🏠 Overview & Data Explorer":
                     | Conversion Rate: <span style="color:#2ECC71;">{df_filter['y'].mean():.1%}</span>
                     </div>""", unsafe_allow_html=True)
         st.dataframe(
-            df_filter.head(100).style.applymap(
+            df_filter.head(100).style.map(
                 lambda v: 'color: #2ECC71; font-weight:600' if v == 1 else
                           ('color: #FF4D6D' if v == 0 else ''),
                 subset=['y']
